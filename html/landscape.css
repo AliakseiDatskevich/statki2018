@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    border: 0;
+}
+
+h1 {
+    width: 100%;
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+}
+
+#game{
+    position: absolute;
+    width: 95%;
+    height: 75vh;
+    overflow: hidden;
+    margin-left: 2%;
+    display: flex
+
+}
+
+
+#boardWrapper {
+    position: absolute;
+    width: 80%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    border: thin solid black;
+}
+
+#board {
+    padding: 0px;
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+#opponentBoard {
+    padding: 0px;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+#menu {
+    border: thin solid black;
+    margin-left: 85% ;
+    display: flex;
+    width: 14%;
+    height: 70vh;
+    flex-direction: column;
+}
+
+.btnDisabled {
+    border-radius: 7px;
+    font-family: Arial;
+    font-size: 2vh;
+    background: #d6d6d6;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin: 5%;
+}
+
+.btn {
+    border-radius: 7px;
+    font-family: Arial;
+    font-size: 2vh;
+    background: #3498db;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin: 5%;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+}
+
+.tile {
+    width: 10%;
+    height: 10%;
+    box-sizing: border-box;
+}
+
+.opponentTile {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+}
+
+.positionTile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 2px solid;
+    background-color: deepskyblue;
+}
+
+.white {
+    background-color: white;
+    color: black;
+    border: 2px solid;
+}
+
+
+
+.green {
+    background-color: lightgreen;
+    color: black;
+    border: 3px solid;
+
+}
+
+#currentAction {
+    width: 100%;
+    height: 10%;
+    margin-top: 1vh;
+    font-size: 2vh;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+#shotTilePositionInput {
+    width: 100%;
+    height: 10%;
+    margin-top: 1vh;
+    font-size: 3vh;
+    display: flex;;
+}
+
+#overlay {
+    position: absolute; /* could also be absolute */
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.hover {
+    -webkit-box-shadow: inset 0px 0px 5px 5px rgba(50, 150, 25, .5);
+    box-shadow: inset 0px 0px 5px 5px rgba(50, 150, 25, .5);
+}
+
+.hoverRed {
+    -webkit-box-shadow: inset 0px 0px 5px 5px rgba(50, 150, 25, .5);
+    box-shadow: inset 0px 0px 5px 5px rgba(255, 0, 0, .5);
+}
+
+.smoothmove {
+    -webkit-transition: top 0.35s ease-in-out, left 0.35s ease-in-out;
+    -moz-transition: top 0.35s ease-in-out, left 0.35s ease-in-out;
+    -ms-transition: top 0.35s ease-in-out, left 0.35s ease-in-out;
+    -o-transition: top 0.35s ease-in-out, left 0.35s ease-in-out;
+    transition: top 0.35s ease-in-out, left 0.35s ease-in-out;
+}
+
+.smoothfade {
+    -webkit-transition: box-shadow 0.25s ease-out;
+    -moz-transition: box-shadow 0.25s ease-out;
+    -ms-transition: box-shadow 0.25s ease-out;
+    -o-transition: box-shadow 0.25s ease-out;
+    transition: box-shadow 0.25s ease-out;
+
+    -webkit-transition: background-color 0.25s ease-in;
+    -moz-transition: background-color 0.25s ease-in;
+    -ms-transition: background-color 0.25s ease-in;
+    -o-transition: background-color 0.25s ease-in;
+    transition: background-color 0.25s ease-in;
+}

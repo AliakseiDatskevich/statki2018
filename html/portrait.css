@@ -10,30 +10,29 @@ h1 {
     text-align: center;
 }
 
-#game{
+#game {
     position: absolute;
-    width: 90%;
-    height: 75vh;
+    width: 95%;
+    height: 85vh;
     overflow: hidden;
-    margin-left: 4%;
-    display: flex
-
+    margin-left: 2%;
+    display: flex;
 }
-
 
 #boardWrapper {
     position: absolute;
     width: 80%;
-    height: 70vh;
+    height: 100%;
     overflow: hidden;
     display: flex;
     border: thin solid black;
+    flex-direction: column;
 }
 
 #board {
     padding: 0px;
     background-color: white;
-    width: 50%;
+    height: 50%;
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
@@ -41,7 +40,7 @@ h1 {
 
 #opponentBoard {
     padding: 0px;
-    width: 50%;
+    height: 50%;
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
@@ -49,17 +48,17 @@ h1 {
 
 #menu {
     border: thin solid black;
-    margin-left: 85% ;
+    margin-left: 85%;
     display: flex;
-    width: 30vh;
-    height: 70vh;
+    width: 14%;
+    height: 50%;
     flex-direction: column;
 }
 
 .btnDisabled {
     border-radius: 7px;
     font-family: Arial;
-    font-size: 20px;
+    font-size: 1vh;
     background: #d6d6d6;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
@@ -69,7 +68,7 @@ h1 {
 .btn {
     border-radius: 7px;
     font-family: Arial;
-    font-size: 20px;
+    font-size: 1vh;
     background: #3498db;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
@@ -97,7 +96,7 @@ h1 {
     font-size: 3vh;
 }
 
-.positionTile{
+.positionTile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,8 +111,6 @@ h1 {
     border: 2px solid;
 }
 
-
-
 .green {
     background-color: lightgreen;
     color: black;
@@ -125,10 +122,11 @@ h1 {
     width: 100%;
     height: 10%;
     margin-top: 1vh;
-    font-size: 3vh;
+    font-size: 1vh;
     font-weight: bold;
     text-align: center;
     display: flex;
+    justify-content: center;
 }
 
 #shotTilePositionInput {
@@ -141,12 +139,12 @@ h1 {
 
 #overlay {
     position: absolute; /* could also be absolute */
-    top: 0;
-    left: 50%;
+    top: 50%;
+    left: 0px;
     height: 100%;
     width: 100%;
     z-index: 1;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hover {
