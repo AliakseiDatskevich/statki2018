@@ -1,0 +1,40 @@
+// Structure for result of "our" shot
+
+// Similar structure for opponent shot but with packetName : "opponentShot"
+
+// Status: miss, hit
+
+{
+  "packetName" : "playerShot",
+  "shot" : {
+      "x" : "C",
+      "y" : 3
+  },
+  "status" : "miss" 
+  
+}
+
+
+// Status: sink - array of whole ship in shot
+
+{
+  "packetName" : "playerShot",
+  "shot" : [
+    {
+      "x" : "C",
+      "y" : 3
+    },
+    {
+      "x" : "C",
+      "y" : 4
+    },
+    {
+      "x" : "C",
+      "y" : 5
+    }
+  ],
+  "status" : "sink" 
+}
+
+
+
