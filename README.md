@@ -25,3 +25,14 @@ Aplikacja powinna być responsywna. Zaproponuj odpowiedni layout i jego zmiany w
 Dane dla aplikacji powinny być przechowywane w bazie MySQL
 
 Autoryzacja na stronie - dla dwóch użytkowników (zarejestrowanych na stałe).
+
+
+// TODO - main game
+- Websocket support:
+    * send: our board at game beggining, shot
+    * receive: our / opponent shot status (missed etc.), end game (print winner)
+- Autofocus on shot input (every shot)
+- Enter-click on shot button
+- Create jpgs: miss, hit, sink, water(background?)
+- Shot input validation (do not allow shooting "AB")
+- In portrait mode swap player's boards in places(?)
