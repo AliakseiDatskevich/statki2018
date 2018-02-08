@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const WebSocket = require('ws');
 
 var db = require('./db/dbservice.js');
@@ -106,7 +107,7 @@ wss.on('connection', (ws) => {
                 db.updateGame(game);
             } else {
                 users[userId].send(JSON.stringify({ shot: shot, status: status, packetName: 'playerShot', gameId: game._id }));
-                users[game.player1 === userId ? game.player1 : game.player2].send(JSON.stringify({ shot: shot, status: status, packetName: 'opponentShot', gameId: game._id }));
+                users[game.player1 === userId ? game.player2 : game.player1].send(JSON.stringify({ shot: shot, status: status, packetName: 'opponentShot', gameId: game._id }));
             }
     	} else {
     		ws.send(JSON.stringify({ msg: 'Unknown packet', status: 'warning'}));
