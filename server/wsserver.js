@@ -101,7 +101,7 @@ wss.on('connection', (ws) => {
 
             if(_.find(board, (ship) => { return ship.status !== 'sink'; }) === undefined) {
                 users[userId].send(JSON.stringify({ winner: 'you', packetName: 'endGame', gameId: game._id }));
-                users[game.player1 === userId ? game.player1 : game.player2].send(JSON.stringify({ winner: 'opponent', packetName: 'endGame', gameId: game._id }));
+                users[game.player1 === userId ? game.player2 : game.player1].send(JSON.stringify({ winner: 'opponent', packetName: 'endGame', gameId: game._id }));
                 game.status = 'ended';
                 delete activeGames[game._id];
                 db.updateGame(game);
