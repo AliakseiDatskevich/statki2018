@@ -10,8 +10,6 @@ const PORT = 8080;
 
 app.use(bodyParser.json());
 
-app.post('/hello', (req, res) => res.send('Hello World!'));
-
 app.post('/user/register', (req, res) => {
 	res.type('json');
 	var user = req.body.user;

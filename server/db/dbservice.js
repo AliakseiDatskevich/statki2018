@@ -53,7 +53,11 @@ module.exports = {
 	createGame: (game) => {
 		return new Promise((resolve, reject) => {
 			db.games.insert(game, (err, newGame) => {
-
+				if(err) {
+					reject();
+				} else {
+					resolve(newGame);
+				}
 			});
 		});
 	},
@@ -79,6 +83,17 @@ module.exports = {
 					reject();
 				} else {
 					resolve(game);
+				}
+			});
+		});
+	},
+	findGamesByStatus: (status) => {
+		return new Promise((resolve, reject) => {
+			db.games.find({ status: status }, (err, games) => {
+				if(err) {
+					reject();
+				} else {
+					resolve(games);
 				}
 			});
 		});
