@@ -16,13 +16,14 @@ wss.on('connection', (ws) => {
     
     if(userId !== undefined && action !== undefined) {
     	if(action === 'create') {
+            console.log('create', userId);
     		db.createGame({ player1: userId, status: 'waiting'})
     		.then((game) => {
-                console.log(game);
     			users[userId] = ws;
     			ws.send(JSON.stringify({ status: 'success', gameId: game._id, packetName: 'create' }));
     		});
     	} else if(action === 'join') {
+            console.log('join', userId, msg.gameId);
     		db.findGameById(msg.gameId)
     		.then((game) => {
                 if(game.status === 'waiting') {
@@ -42,6 +43,7 @@ wss.on('connection', (ws) => {
                 }
     		});
     	} else if(action === 'board') {
+            console.log('board', userId, msg.gameId);
     		var game = activeGames[msg.gameId];
     		var playerBoard = msg.board;
 
@@ -60,6 +62,7 @@ wss.on('connection', (ws) => {
     		}
             db.updateGame(game);
     	} else if(action === 'playerShot') {
+            console.log('playerShot', userId, msg.gameId);
             var game = activeGames[msg.gameId];
             var shot = msg.shot;
             var board, status = 'miss';

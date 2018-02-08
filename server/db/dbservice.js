@@ -78,11 +78,11 @@ module.exports = {
 	},
 	findGameById: (id) => {
 		return new Promise((resolve, reject) => {
-			db.games.find({ _id: id }, (err, game) => {
+			db.games.find({ _id: id }, (err, games) => {
 				if(err) {
 					reject();
 				} else {
-					resolve(game);
+					resolve(games.length > 0 ? games[0] : {});
 				}
 			});
 		});
