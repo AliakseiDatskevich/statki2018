@@ -99,6 +99,7 @@ wss.on('connection', (ws) => {
                 users[userId].send(JSON.stringify({ winner: 'you', packetName: 'endGame', gameId: game._id }));
                 users[game.player1 === userId ? game.player1 : game.player2].send(JSON.stringify({ winner: 'opponent', packetName: 'endGame', gameId: game._id }));
                 game.status = 'ended';
+                delete activeGames[game._id];
                 db.updateGame(game);
             } else {
                 users[userId].send(JSON.stringify({ shot: shot, status: status, packetName: 'playerShot', gameId: game._id }));
